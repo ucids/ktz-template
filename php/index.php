@@ -2,7 +2,11 @@
 <html lang="en">
 <!--begin::Head-->
 
-<? require_once 'components/head/header.php'; ?>
+<?php
+session_start();
+require_once 'components/head/header.php';
+include 'admin/session_manager.php';
+?>
 <!--end::Head-->
 
 <body id="kt_body" data-kt-app-header-stacked="true" data-kt-app-header-primary-enabled="true" data-kt-app-header-secondary-enabled="false" class="app-default">
@@ -14,9 +18,12 @@
 			<? require_once 'components/navbar/header-menu.php'; ?>
 			<!--end::Header-->
 			<!--begin::Wrapper-->
-			<? require_once 'views/dashboard.php'; ?>
+			<?
+			$departamento = isset($_GET['departamento']) ? $_GET['departamento'] : 'default';
+			// Verificar si el departamento existe en el array y cargar la vista correspondiente
+			include 'views/' . $departamento . '.php';
+			?>
 			<!--end::Wrapper-->
-
 		</div>
 	</div>
 	<!--end::Page-->
@@ -28,7 +35,7 @@
 	<!--begin::Global Javascript Bundle(mandatory for all pages)-->
 	<script src="assets/plugins/global/plugins.bundle.js"></script>
 	<script src="assets/js/scripts.bundle.js"></script>
-	<?php require_once 'context/index-script.php';?>
+	<?php require_once 'context/index-script.php'; ?>
 </body>
 
 </html>

@@ -6,6 +6,8 @@
 session_start();
 require_once 'components/head/header.php';
 include 'admin/session_manager.php';
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 ?>
 <!--end::Head-->
 

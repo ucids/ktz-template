@@ -13,7 +13,7 @@
 					</button>
 					<!--end::Header toggle-->
 					<!--begin::Logo-->
-					<a href="#" class="d-flex align-items-center me-lg-20 me-5">
+					<a href="index.php" class="d-flex align-items-center me-lg-20 me-5">
 						<!-- <img alt="Logo" src="assets/media/logos/demo-35-small.svg" class="h-20px d-sm-none d-inline" /> -->
 						<img alt="Logo" src="assets/media/ktz/logo.png" class="h-25px h-lg-65px theme-light-show d-none d-sm-inline" />
 						<img alt="Logo" src="assets/media/ktz/ki.png" class="h-20px h-lg-25px theme-dark-show d-none d-sm-inline" />
@@ -48,7 +48,7 @@
 													<!--begin:Menu item-->
 													<div class="menu-item p-0 m-0">
 														<!--begin:Menu link-->
-														<a href="admin/.php" class="menu-link active">
+														<a href="index.php?departamento=ingenieria" class="menu-link active">
 															<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																<i class="ki-outline ki-element-11 text-primary fs-1"></i>
 															</span>

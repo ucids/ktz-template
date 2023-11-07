@@ -60,7 +60,7 @@
                                         <div class="col-md-4">
 
                                             <!--begin::Card widget 11-->
-                                            <a href="#">
+                                            <a href="index.php?departamento=<?php echo strtolower($row['departamento']) ?> ">
                                                 <div class="card card-flush h-xl-100 hover-elevate-up" style="background-color:#<? echo $row['color']?>" >
                                                     <!--begin::Header-->
                                                     <div class="card-header flex-nowrap pt-5">

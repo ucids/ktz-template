@@ -1,4 +1,4 @@
-<div id="kt_app_header" class="app-header">
+<div  class="app-header">
 	<!--begin::Header primary-->
 	<div class="app-header-primary" data-kt-sticky="true" data-kt-sticky-name="app-header-primary-sticky" data-kt-sticky-offset="{default: 'false', lg: '300px'}">
 		<!--begin::Header primary container-->
@@ -29,7 +29,7 @@
 						<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 							<!--begin:Menu link-->
 							<span class="menu-link py-3">
-								<span class="menu-title">Departamentos</span>
+								<span class="menu-title">Menu</span>
 								<span class="menu-arrow d-lg-none"></span>
 							</span>
 							<!--end:Menu link-->
@@ -48,7 +48,7 @@
 													<!--begin:Menu item-->
 													<div class="menu-item p-0 m-0">
 														<!--begin:Menu link-->
-														<a href="index.php?departamento=ingenieria" class="menu-link active">
+														<a href="index.php" class="menu-link active">
 															<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																<i class="ki-outline ki-element-11 text-primary fs-1"></i>
 															</span>
@@ -67,13 +67,13 @@
 													<!--begin:Menu item-->
 													<div class="menu-item p-0 m-0">
 														<!--begin:Menu link-->
-														<a href="../../demo35/dist/dashboards/ecommerce.html" class="menu-link">
+														<a href="index.php?page=admin/categorias" class="menu-link">
 															<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																<i class="ki-outline ki-basket text-danger fs-1"></i>
 															</span>
 															<span class="d-flex flex-column">
-																<span class="fs-6 fw-bold text-gray-800">eCommerce</span>
-																<span class="fs-7 fw-semibold text-muted">Sales reports</span>
+																<span class="fs-6 fw-bold text-gray-800">Prespupuesto</span>
+																<span class="fs-7 fw-semibold text-muted">Presupuestos por Categorias</span>
 															</span>
 														</a>
 														<!--end:Menu link-->
@@ -281,7 +281,7 @@
 											<div class="menu-item p-0 m-0">
 												<!--begin:Menu link-->
 												<a href="../../demo35/dist/dashboards/school.html" class="menu-link py-2">
-													<span class="menu-title">School</span>
+													<span class="menu-title">Presupuestos</span>
 												</a>
 												<!--end:Menu link-->
 											</div>
@@ -289,7 +289,7 @@
 											<!--begin:Menu item-->
 											<div class="menu-item p-0 m-0">
 												<!--begin:Menu link-->
-												<a href="../../demo35/dist/dashboards/podcast.html" class="menu-link py-2">
+												<a href="admin/registro.php" class="menu-link py-2">
 													<span class="menu-title">Registrar Usuario</span>
 												</a>
 												<!--end:Menu link-->
@@ -1033,6 +1033,4 @@
 		<!--end::Header primary container-->
 	</div>
 	<!--end::Header primary-->
-	<!--begin::Header secondary-->
-	<!--end::Header secondary-->
 </div>

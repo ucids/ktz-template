@@ -1,4 +1,3 @@
-<? require 'data/db.php'; ?>
 <div class="app-wrapper  flex-column flex-row-fluid " id="kt_app_wrapper">
     <!--begin::Wrapper container-->
     <div class="app-container  container-xxl d-flex flex-row flex-column-fluid ">
@@ -158,36 +157,100 @@
                 <!--end::Content-->
 
             </div>
-            <!--end::Content wrapper-->
+            <!--end::Image-->
 
-
-            <!--begin::Footer-->
-            <div id="kt_app_footer" class="app-footer  align-items-center justify-content-center justify-content-md-between flex-column flex-md-row py-3 py-lg-6 ">
-                <!--begin::Copyright-->
-                <div class="text-dark order-2 order-md-1">
-                    <span class="text-muted fw-semibold me-1">2023©</span>
-                    <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
-                </div>
-                <!--end::Copyright-->
-
-                <!--begin::Menu-->
-                <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                    <li class="menu-item"><a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a></li>
-
-                    <li class="menu-item"><a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a></li>
-
-                    <li class="menu-item"><a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a></li>
-                </ul>
-                <!--end::Menu-->
+            <!--begin::layer-->
+            <div class="overlay-layer rounded bg-black" style="opacity: 0.4">
             </div>
-            <!--end::Footer-->
+            <!--end::layer-->
         </div>
-        <!--end:::Main-->
+        <!--end::Overlay-->
 
+        <!--begin::Heading-->
+        <div class="position-absolute text-white mb-8 ms-10 bottom-0">
+            <!--begin::Title-->
+            <h3 class="text-white fs-2qx fw-bold mb-3 m">Bienvenido</h3>
+            <!--end::Title-->
 
+            <!--begin::Text-->
+            <div class="fs-2 fw-semibold">
+                Selecciona tu departamento
+            </div>
+            <!--end::Text-->
+
+        </div>
+
+        <!--end::Heading-->
     </div>
-    <!--end::Wrapper container-->
-</div>
+    <!--end::Menu-->
+    <!--begin::Row-->
+    <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+        <!--begin::Col-->
+
+        <div class="col-xxl-12">
+            <!--begin::Row-->
+            <div class="row g-5 g-xl-10">
+                <?
+                $consulta = "SELECT * FROM departamentos";
+                $resultado = $pdo->query($consulta);
+
+                if ($resultado) {
+                    // Iterar a través de los resultados y mostrar cada departamento
+                    while ($row = $resultado->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <!--begin::Col-->
+                        
+                        <div class="col-md-4">
+
+                            <!--begin::Card widget 11-->
+                            <a href="#">
+                                <div class="card card-flush h-xl-100 hover-elevate-up" style="background-color:#<? echo $row['color']?>" >
+                                    <!--begin::Header-->
+                                    <div class="card-header flex-nowrap pt-5">
+                                        <!--begin::Title-->
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold fs-4 text-gray-800"><? echo $row['departamento']?></span>
+                                            <span class="mt-1 fw-semibold fs-7"><? echo $row['descripcion']?></span>
+                                        </h3>
+                                        <!--end::Title-->
+                                    </div>
+                                    <!--end::Header-->
+
+                                    <!--begin::Body-->
+                                    <div class="card-body text-center pt-5">
+                                        <!--begin::Image-->
+                                        <img src="<? echo $row['imagen'] ?>" class="h-125px mb-5" alt="">
+                                        <!--end::Image-->
+
+                                        <!--begin::Section-->
+                                        <div class="text-start">
+                                            <span class="d-block fw-bold fs-1 text-gray-800"><? echo $row['departamento']?></span>
+                                            <span class="mt-1 fw-semibold fs-3">12%</span>
+                                        </div>
+                                        <!--end::Section-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                            </a>
+                            <!--end::Card widget 11-->
+
+
+                        </div>
+
+                        <!--end::Col-->
+                <? }
+                } else {
+                    echo "Error en la consulta: " . $pdo->errorInfo()[2];
+                }
+                ?>
+
+
+            </div>
+            <!--end::Row-->
+        </div>
+        <!--end::Col-->
+    </div>
+    <!--end::Row-->
+
 <script>
     function updateCurrentTime() {
         const currentTimeElement = document.getElementById('current-time');

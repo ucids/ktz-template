@@ -12,6 +12,8 @@
 	}
 	include 'components/head/header.php';
 	include 'admin/session_manager.php';
+    require_once 'components/head/header.php';
+
 ?>
 <!--end::Head-->
 

@@ -289,7 +289,7 @@
 											<!--begin:Menu item-->
 											<div class="menu-item p-0 m-0">
 												<!--begin:Menu link-->
-												<a href="../../demo35/dist/dashboards/podcast.html" class="menu-link py-2">
+												<a href="admin/registro.php" class="menu-link py-2">
 													<span class="menu-title">Registrar Usuario</span>
 												</a>
 												<!--end:Menu link-->

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$password = $_POST['password'];
 
 	// Consulta para obtener el hash de la contraseña del usuario
-	$query = "SELECT id, username, email, role, password FROM users WHERE username = :username";
+	$query = "SELECT * FROM users WHERE username = :username";
 	$stmt = $pdo->prepare($query);
 	$stmt->bindParam(':username', $username);
 	$stmt->execute();
@@ -21,12 +21,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		// Puedes almacenar información del usuario en la sesión si es necesario
 		$_SESSION['user_id'] = $user['id'];
 		$_SESSION['username'] = $user['username'];
+		$_SESSION['nombre'] = $user['nombre'];
+		$_SESSION['lastname'] = $user['lastname'];
 		$_SESSION['email'] = $user['email'];
-		$_SESSION['role'] = $user['role'];
+		$_SESSION['rol_id'] = $user['rol_id'];
+		$_SESSION['departamento_id'] = $user['departamento_id'];
 		$_SESSION['logged_in'] = true;
 
 		// Redirige al usuario a la página de inicio, por ejemplo
-		header("Location: /index.php?departamento=ingenieria");
+		header("Location: /index.php");
 		exit();
 	} else {
 		// Credenciales incorrectas

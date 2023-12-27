@@ -1,6 +1,5 @@
 <?php
 define('DATA_DIR', __DIR__);
-
 // Define the path to the .env file
 $envFilePath = __DIR__ . '/.env';
 

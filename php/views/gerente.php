@@ -182,6 +182,6 @@
     <!--begin::Statements-->
     <? 
     $section = isset($_GET['section']) ? $_GET['section'] : 'default';
-    include 'admin/'. $section .'.php'?>
+    include 'gerente/'. $section .'.php'?>
     <!--end::Statements-->
 </div>

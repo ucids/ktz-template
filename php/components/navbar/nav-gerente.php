@@ -67,7 +67,7 @@
 													<!--begin:Menu item-->
 													<div class="menu-item p-0 m-0">
 														<!--begin:Menu link-->
-														<a href="index.php?page=admin/categorias" class="menu-link">
+														<a href="index.php?page=categorias" class="menu-link">
 															<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
 																<i class="ki-outline ki-basket text-danger fs-1"></i>
 															</span>

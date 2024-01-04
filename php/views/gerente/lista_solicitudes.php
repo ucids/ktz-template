@@ -1,58 +1,42 @@
 <?
-$sql = "SELECT * FROM View_Solicitudes Where status = 1";
+$sql = "SELECT * FROM View_Solicitudes";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $solicitudes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<table id="kt_datatable_dom_positioning"
-    class="table table-striped table-row-dashed table-row-bordered gy-5 gs-7 border rounded">
-    <thead>
-        <tr class="fw-bold fs-6 text-gray-800 px-7">
-            <th>Solicitante</th>
-            <th>Categoria</th>
-            <th>Articulos</th>
-            <th>Tipo</th>
-            <th>Proveedor</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($solicitudes as $solicitud) : ?>
-        <tr>
-            <td><? echo $solicitud['usuario']; ?></td>
-            <td><? echo $solicitud['nombre_categoria']; ?></td>
-            <td><? echo $solicitud['cantidad_articulos']; ?></td>
-            <td><? echo $solicitud['tipo']; ?></td>
-            <td><? echo $solicitud['nombre_proveedor']; ?></td>
-            <td><? echo $solicitud['created_at']; ?></td>
-            <td>
-                <a href="#" class="btn btn-sm btn-light btn-flex btn-center btn-light-warning"
-                    data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                    Actions
-                    <i class="ki-outline ki-down fs-5 ms-1"></i> </a>
-                <!--begin::Menu-->
-                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
-                    data-kt-menu="true">
-                    <!--begin::Menu item-->
-                    <div class="menu-item px-3">
-                        <a href="index.php?section=solicitud&solicitud=<? echo $solicitud['id']; ?>"
-                            class="menu-link px-3">
-                            Edit
-                        </a>
-                    </div>
-                    <!--end::Menu item-->
-                    <!--begin::Menu item-->
-                    <div class="menu-item px-3">
-                        <a href="#" class="menu-link px-3" data-kt-ecommerce-product-filter="delete_row">
-                            Delete
-                        </a>
-                    </div>
-                    <!--end::Menu item-->
-                </div>
-                <!--end::Menu-->
-            </td>
-        </tr>
-    <?php endforeach; ?>
-    </tbody>
-</table>
+<div class="card ">
+    <div class="card-header card-header-stretch">
+        <h3 class="card-title">Solicitudes</h3>
+        <div class="card-toolbar">
+            <ul class="nav nav-tabs nav-line-tabs nav-stretch fs-6 border-0">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#kt_tab_pane_7">Pendientes de Aprobar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_8">Aprobadas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#kt_tab_pane_9">Rechazadas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <?
+        include 'functions/gerente/lista_solicitudes.php';
+    ?>
+    <div class="card-body">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="kt_tab_pane_7" role="tabpanel">
+                <? include 'tablas/solicitudes_nuevas.php'?>
+            </div>
+
+            <div class="tab-pane fade" id="kt_tab_pane_8" role="tabpanel">
+                <? include 'tablas/solicitudes_aprobadas.php'?>
+            </div>
+
+            <div class="tab-pane fade" id="kt_tab_pane_9" role="tabpanel">
+                <? include 'tablas/solicitudes_rechazadas.php'?>
+            </div>
+        </div>
+    </div>
+</div>

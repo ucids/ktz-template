@@ -107,6 +107,31 @@
             }
         });
     </script>
+    <!-- Scrip Gerente -->
+    <script>
+        $(document).ready(function() {
+            function updateCounts() {
+                $.ajax({
+                    url: 'functions/gerente/notificaciones.php',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        $('#newCount').text(data.newCount);
+                        $('#approvedCount').text(data.approvedCount);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log('AJAX error:', textStatus, errorThrown); // Log any errors
+                    }
+                });
+            }
+
+            // Update the counts immediately when the page loads
+            updateCounts();
+
+            // Then update the counts every 5 seconds
+            setInterval(updateCounts, 5000);
+        });
+    </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>

@@ -1,5 +1,4 @@
 <?php
-try {
     // Define the SQL query
     $sql = "SELECT * FROM Vista_Solicitudes";
 
@@ -20,12 +19,8 @@ try {
         if (!isset($groupedResults[$status])) {
             $groupedResults[$status] = [];
         }
-        $groupedResults[$status][] = $row;
     }
-} catch (PDOException $e) {
-    echo "Error: " . $e->getMessage();
-}
-
+        $groupedResults[$status][] = $row;
 // Define variables for each status
 $nueva_solicitud = [];
 $en_revision = [];
@@ -105,4 +100,4 @@ function generateTable($solicitudes, $tableId)
     </tbody>
 </table>
 <?php
-}
+}?>

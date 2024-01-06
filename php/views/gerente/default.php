@@ -1,7 +1,23 @@
 <?  
-    $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : 'default';
-    $section = isset($_GET['section']) ? $_GET['section'] : 'default'; 
+    // $tipo = isset($_GET['tipo']) ? $_GET['tipo'] : 'default';
+    // $section = isset($_GET['section']) ? $_GET['section'] : 'default';
+    // // Define the SQL queries
+    // function getCount($pdo, $estado) {
+    //     $sql = "SELECT COUNT(*) FROM Vista_Solicitudes WHERE estado = :estado";
+    //     $stmt = $pdo->prepare($sql);
+    //     $stmt->execute([':estado' => $estado]);
+    //     return $stmt->fetchColumn();
+    // }
+    // $newCount = getCount($pdo, 'Nueva Solicitud');
+    // $approvedCount = getCount($pdo, 'La solicitud ha sido aprobada');
+    // Now $newCount contains the count of new requests and $approvedCount contains the count of approved requests
 ?>
+
+<div id="counts">
+    <p>New Requests: <span id="newCount"></span></p>
+    <p>Approved Requests: <span id="approvedCount"></span></p>
+</div>
+
 <div id="kt_app_content" class="app-content  flex-column-fluid ">
     <!--begin::Navbar-->
     <div class="card mb-5 mb-xl-10">
@@ -56,7 +72,9 @@
                         <!--end::User-->
                     </div>
                     <!--end::Title-->
+                    <?
 
+                    ?>
                     <!--begin::Stats-->
                     <div class="d-flex flex-wrap flex-stack">
                         <!--begin::Wrapper-->
@@ -181,4 +199,5 @@
     include $section .'.php'?>
     <!--end::Statements-->
 </div>
-<?
+
+
